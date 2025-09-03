@@ -1,0 +1,31 @@
+{
+  "name": "atomic-ui-cli",
+  "version": "1.0.0",
+  "description": "Add beautiful components with one command",
+  "bin": {
+    "atomic-ui": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "atomic-ui-cli",
+    "atomic-ui",
+    "add component by cli",
+    "ui components"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "Tung Thai",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "execa": "^9.6.0",
+    "node-fetch": "^3.3.2",
+    "picocolors": "^1.1.1",
+    "prettier": "^3.6.1",
+    "typescript": "^5.8.3"
+  }
+}

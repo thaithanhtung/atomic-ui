@@ -1,0 +1,6 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "my-ui",
+  "homepage": "https://my-ui.vercel.app",
+  "items": []
+}

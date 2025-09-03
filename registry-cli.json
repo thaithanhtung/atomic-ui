@@ -1,0 +1,32 @@
+{
+  "name": "my-ui",
+  "homepage": "https://my-ui.vercel.app",
+  "items": [
+    {
+      "name": "gradient-button",
+      "type": "registry:component",
+      "devDependencies": [],
+      "dependencies": ["clsx", "tailwind-merge"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "./src/components/my-ui/gradient-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shiny-card",
+      "type": "registry:component",
+      "devDependencies": [],
+      "dependencies": ["clsx", "tailwind-merge"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "./src/components/my-ui/shiny-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
