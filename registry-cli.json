@@ -1,5 +1,5 @@
 {
-  "name": "my-ui",
+  "name": "atomic-ui",
   "homepage": "https://my-ui.vercel.app",
   "items": [
     {
@@ -10,7 +10,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "./src/components/my-ui/gradient-button.tsx",
+          "path": "./src/components/atomic-ui/gradient-button.tsx",
           "type": "registry:component"
         }
       ]
@@ -23,7 +23,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "./src/components/my-ui/shiny-card.tsx",
+          "path": "./src/components/atomic-ui/shiny-card.tsx",
           "type": "registry:component"
         }
       ]
