@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4 col-span-full lg:col-span-1">
-            <h3 className="text-2xl lg:text-3xl font-bold">My UI</h3>
+            <h3 className="text-2xl lg:text-3xl font-bold">Atomic UI</h3>
             <p className="text-muted-foreground max-w-xs">
               Beautifully crafted, accessible components built with Tailwind CSS
               perfect for modern developers and creative teams.
@@ -106,6 +106,7 @@ const Footer = () => {
 };
 
 export default Footer;
+export { Footer };
 
 const footerNavigation = [
   { id: 1, name: "Home", url: "/" },

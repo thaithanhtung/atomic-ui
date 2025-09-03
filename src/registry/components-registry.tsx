@@ -10,9 +10,9 @@ import ShinyCardDemoCode from "@/components/atomic-ui/shiny-card-demo.tsx?raw";
 
 export interface ComponentRegistry {
   [key: string]: {
-    component: React.ComponentType<Record<string, unknown>>;
+    component: React.ComponentType<unknown>;
     code: string;
-    demo: React.ComponentType<Record<string, unknown>>;
+    demo: React.ComponentType<unknown>;
     demoCode: string;
     title: string;
     description: string;
@@ -22,9 +22,9 @@ export interface ComponentRegistry {
 
 export const componentsRegistry: ComponentRegistry = {
   "gradient-button": {
-    component: GradientButton,
+    component: GradientButton as React.ComponentType<unknown>,
     code: GradientButtonCode,
-    demo: GradientButtonDemo,
+    demo: GradientButtonDemo as React.ComponentType<unknown>,
     demoCode: GradientButtonDemoCode,
     title: "Gradient Button",
     description:
@@ -32,9 +32,9 @@ export const componentsRegistry: ComponentRegistry = {
     dependencies: ["clsx", "tailwind-merge"],
   },
   "shiny-card": {
-    component: ShinyCard,
+    component: ShinyCard as React.ComponentType<unknown>,
     code: ShinyCardCode,
-    demo: ShinyCardDemo,
+    demo: ShinyCardDemo as React.ComponentType<unknown>,
     demoCode: ShinyCardDemoCode,
     title: "Shiny Card",
     description: "A card component with shimmer effect animation on hover",

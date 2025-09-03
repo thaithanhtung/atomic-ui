@@ -49,6 +49,18 @@ const language = await select({
   ],
 });
 
+// 🆕 THÊM PHẦN NÀY
+const useSourceFolder = await select({
+  message: "Where do you want to place the components?",
+  options: [
+    { label: "src/components/atomic-ui (recommended)", value: true },
+    { label: "components/atomic-ui", value: false },
+  ],
+});
+
+// 🆕 THÊM BIẾN ĐỂ XÁC ĐỊNH ĐƯỜNG DẪN
+const baseComponentsPath = useSourceFolder ? "src/components" : "components";
+
 async function fetchRegistry() {
   const res = await fetch(registryPath);
   if (!res.ok) throw new Error("Failed to fetch registry.json");
@@ -89,7 +101,8 @@ async function downloadFileFromGitHub(filePath) {
   const content = await res.text();
 
   const fileName = path.basename(filePath);
-  const targetDir = path.join(process.cwd(), "components", "atomic-ui");
+  // const targetDir = path.join(process.cwd(), "components", "atomic-ui");
+  const targetDir = path.join(process.cwd(), baseComponentsPath, "atomic-ui");
   const targetPath = path.join(targetDir, fileName);
 
   // Convert .tsx to .jsx if JS mode and it's a .tsx file

@@ -13,9 +13,10 @@ const Navbar = () => {
     async function fetchStars() {
       try {
         const response = await fetch(
-          "https://api.github.com/repos/your-username/my-ui"
+          "https://api.github.com/repos/thaithanhtung/atomic-ui"
         );
         const data = await response.json();
+        console.log(data);
         setStars(data.stargazers_count || 0);
       } catch (error) {
         console.error("Error fetching stars:", error);
@@ -25,14 +26,15 @@ const Navbar = () => {
     fetchStars();
   }, []);
 
-  if (pathName.includes("docs") || pathName.includes("preview")) return null;
+  // Show navbar on all pages
+  // if (pathName.includes("docs") || pathName.includes("preview")) return null;
 
   return (
     <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <nav className="container flex items-center justify-between h-16 lg:h-20">
         <div className="flex items-center gap-2">
           <Link href="/" className="text-2xl lg:text-3xl font-bold">
-            My UI
+            Clik Atomic UI
           </Link>
           <span className="bg-primary/10 text-primary rounded-full font-semibold px-2 py-0.5 text-xs hidden lg:block">
             Beta
@@ -44,11 +46,16 @@ const Navbar = () => {
             <Link
               key={nav.id}
               href={nav.url}
-              className={`font-medium transition-colors hover:text-primary ${
+              className={`font-medium transition-colors hover:text-primary flex items-center gap-2 ${
                 pathName === nav.url ? "text-primary" : "text-muted-foreground"
               }`}
             >
               {nav.name}
+              {nav.isDev && (
+                <span className="bg-yellow-500 text-black px-1.5 py-0.5 rounded text-xs font-bold">
+                  DEV
+                </span>
+              )}
             </Link>
           ))}
         </div>
@@ -62,7 +69,7 @@ const Navbar = () => {
             <FaDiscord className="text-xl" />
           </Link>
           <Link
-            href="https://github.com/your-username/my-ui"
+            href="https://github.com/thaithanhtung/atomic-ui"
             target="_blank"
             className="flex items-center gap-2 p-2 rounded-full hover:bg-accent transition-colors"
           >
@@ -77,8 +84,16 @@ const Navbar = () => {
 };
 
 export default Navbar;
+export { Navbar };
 
-const navigation = [
+interface NavigationItem {
+  id: number;
+  name: string;
+  url: string;
+  isDev?: boolean;
+}
+
+const navigation: NavigationItem[] = [
   {
     id: 1,
     name: "Docs",
@@ -91,12 +106,18 @@ const navigation = [
   },
   {
     id: 3,
-    name: "About",
-    url: "/about",
-  },
-  {
-    id: 4,
     name: "Playground",
     url: "/playground",
   },
+  // Chỉ hiển thị trong development
+  ...(process.env.NODE_ENV === "development"
+    ? [
+        {
+          id: 4,
+          name: "Dev Guide",
+          url: "/dev-guide",
+          isDev: true,
+        },
+      ]
+    : []),
 ];

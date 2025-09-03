@@ -11,8 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "My UI",
-    template: "%s | My UI",
+    default: "Clik Atomic UI",
+    template: "%s | Clik Atomic UI",
   },
   description: "A modern React and Next.js based UI component library",
   keywords: [
@@ -26,24 +26,24 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Your Name",
+      name: "Tung Thai",
       url: "https://your-website.com",
     },
   ],
-  creator: "Your Name",
+  creator: "Tung Thai",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://my-ui.vercel.app",
-    title: "My UI",
+    url: "https://atomic-ui.vercel.app",
+    title: "Clik Atomic UI",
     description: "A modern React and Next.js based UI component library",
-    siteName: "My UI",
+    siteName: "Clik Atomic UI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "My UI",
+    title: "Clik Atomic UI",
     description: "A modern React and Next.js based UI component library",
-    creator: "@your_twitter",
+    creator: "@thaithanhtung",
   },
 };
 

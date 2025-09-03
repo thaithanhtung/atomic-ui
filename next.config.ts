@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
+  // Fix workspace root warning
+  outputFileTracingRoot: __dirname,
   images: {
     remotePatterns: [
       {

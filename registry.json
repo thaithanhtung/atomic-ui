@@ -1,6 +1,19 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "my-ui",
-  "homepage": "https://my-ui.vercel.app",
-  "items": []
+  "name": "atomic-ui",
+  "homepage": "https://clik-atomic-ui.vercel.app",
+  "items": [
+    {
+      "name": "gradient-button",
+      "type": "registry:ui",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": ["components/atomic-ui/gradient-button.tsx"]
+    },
+    {
+      "name": "shiny-card",
+      "type": "registry:ui",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": ["components/atomic-ui/shiny-card.tsx"]
+    }
+  ]
 }

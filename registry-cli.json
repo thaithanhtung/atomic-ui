@@ -1,6 +1,6 @@
 {
   "name": "atomic-ui",
-  "homepage": "https://my-ui.vercel.app",
+  "homepage": "https://atomic-ui.vercel.app",
   "items": [
     {
       "name": "gradient-button",
